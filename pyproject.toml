@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tc66-console"
+version = "0.1.0"
+description = "Console application for reading and recording TC66/TC66C measurements over Bluetooth LE or USB"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.11"
+dependencies = [
+    "pyserial==3.5",
+    "cryptography>=46,<48",
+    "bleak>=3.0.2,<4",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Operating System :: MacOS",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: System :: Hardware",
+]
+
+[project.urls]
+Homepage = "https://github.com/CharlsTrtanj/tc66-console"
+Repository = "https://github.com/CharlsTrtanj/tc66-console"
+Issues = "https://github.com/CharlsTrtanj/tc66-console/issues"
+
+[project.scripts]
+tc66c = "tc66c.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
